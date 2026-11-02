@@ -7,7 +7,8 @@ Portal para os colaboradores de uma rede de supermercados. O objetivo é incenti
 Requisitos: **Node.js 22.13 ou mais recente**. O banco é SQLite embutido no Node, então não é preciso instalar nenhum banco.
 
 ```bash
-cd portal-saude
+git clone https://github.com/Helitonprangee/viva-bem.git
+cd viva-bem
 npm install
 cp .env.example .env        # opcional: coloque a ANTHROPIC_API_KEY
 npm run seed                # opcional: lojas, setores, cargos, recompensas e 7 colaboradores de exemplo
@@ -115,6 +116,16 @@ src/
 public/              interface (HTML, CSS e JS, sem build); exercicios.js = movimentos animados
 test/                testes (node:test)
 ```
+
+## Para quem vai continuar o projeto
+Pendências conhecidas, em ordem de prioridade:
+- [ ] Tela de aceite do **termo de consentimento** (LGPD) no primeiro acesso, guardando a data e a versão aceita.
+- [ ] Tela para o RH e o médico do trabalho **editarem o catálogo de exames** preventivos (hoje em `src/services/catalogo.js`).
+- [ ] Testar a **validação por IA** com uma chave real da API e medir o custo por comprovante.
+- [ ] Rodar o build completo do Docker (`docker compose up -d --build`) num servidor com internet.
+- [ ] Testar o envio real de **e-mail** (SMTP) e **WhatsApp** (Twilio, com modelo de mensagem aprovado).
+
+Antes de enviar uma mudança, rode `npm test`.
 
 ## Segurança e privacidade
 - Senhas com scrypt e salt. O login é bloqueado após 5 tentativas erradas. A sessão fica em cookie `httpOnly` e `SameSite=Strict`.

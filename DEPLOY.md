@@ -10,8 +10,8 @@ Guia para instalar o portal num servidor da empresa (ou numa VPS) com **HTTPS au
 
 ## Instalação
 ```bash
-git clone https://github.com/Helitonprangee/Gabriela.git
-cd Gabriela/portal-saude
+git clone https://github.com/Helitonprangee/viva-bem.git
+cd viva-bem
 cp .env.example .env
 nano .env            # preencha DOMINIO, ANTHROPIC_API_KEY e, se quiser, SMTP/Twilio
 docker compose up -d --build
@@ -36,7 +36,7 @@ Verifique a saúde do sistema em `https://SEU_DOMINIO/api/saude` ou com `docker 
 - Os arquivos ficam na pasta `backups/` do servidor: `portal-AAAA-MM-DD.db` (banco) e `uploads/` (comprovantes).
 - **Copie essa pasta para fora do servidor** (outro servidor, nuvem, NAS). Exemplo com `rsync` agendado no cron do servidor:
   ```
-  30 3 * * * rsync -a /caminho/Gabriela/portal-saude/backups/ usuario@servidor-backup:/backups/viva-bem/
+  30 3 * * * rsync -a /caminho/viva-bem/backups/ usuario@servidor-backup:/backups/viva-bem/
   ```
 - Backup manual a qualquer momento: `docker compose exec portal node src/services/backup.js`.
 
