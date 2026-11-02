@@ -7,8 +7,8 @@ Portal para os colaboradores de uma rede de supermercados. O objetivo é incenti
 Requisitos: **Node.js 22.13 ou mais recente**. O banco é SQLite embutido no Node, então não é preciso instalar nenhum banco.
 
 ```bash
-git clone https://github.com/Helitonprangee/viva-bem.git
-cd viva-bem
+git clone https://github.com/Helitonprangee/VivaBem.git
+cd VivaBem
 npm install
 cp .env.example .env        # opcional: coloque a ANTHROPIC_API_KEY
 npm run seed                # opcional: lojas, setores, cargos, recompensas e 7 colaboradores de exemplo
